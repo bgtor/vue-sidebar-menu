@@ -6,10 +6,10 @@
     @mouseleave="onMouseLeave"
   >
     <slot name="header" />
-    <div
+    <!-- <div
       class="vsm--scroll-wrapper"
       :style="isCollapsed && [rtl ? {'margin-left': '-17px'} : {'margin-right': '-17px'}]"
-    >
+    > -->
       <div
         class="vsm--list"
         :style="isCollapsed && {'width': widthCollapsed}"
@@ -61,7 +61,7 @@
           />
         </transition>
       </div>
-    </div>
+    <!-- </div> -->
     <slot name="footer" />
     <button
       v-if="!hideToggle"
