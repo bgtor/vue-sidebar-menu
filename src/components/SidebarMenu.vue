@@ -10,7 +10,7 @@
       class="vsm--scroll-wrapper"
       :style="isCollapsed && [rtl ? {'margin-left': '-17px'} : {'margin-right': '-17px'}]"
     > -->
-    <perfect-scrollbar>
+    <perfect-scrollbar v-if="!isCollapsed" :options="psOptions">
       <div
         class="vsm--list"
         :style="isCollapsed && {'width': widthCollapsed}"
@@ -62,7 +62,60 @@
           />
         </transition>
       </div>
-      </perfect-scrollbar>
+    </perfect-scrollbar>
+    <template v-else>
+      <div
+        class="vsm--list"
+        :style="isCollapsed && {'width': widthCollapsed}"
+      >
+        <sidebar-menu-item
+          v-for="(item, index) in menu"
+          :key="index"
+          :item="item"
+          :is-collapsed="isCollapsed"
+          :active-show="activeShow"
+          :show-one-child="showOneChild"
+          :show-child="showChild"
+          :rtl="rtl"
+          :mobile-item="mobileItem"
+          :disable-hover="disableHover"
+          @set-mobile-item="setMobileItem"
+          @unset-mobile-item="unsetMobileItem"
+        >
+          <slot
+            slot="dropdown-icon"
+            name="dropdown-icon"
+          />
+        </sidebar-menu-item>
+      </div>
+      <div
+        v-if="isCollapsed"
+        class="vsm--mobile-item"
+        :style="mobileItemStyle.item"
+      >
+        <sidebar-menu-item
+          v-if="mobileItem"
+          :item="mobileItem"
+          :is-mobile-item="true"
+          :mobile-item-style="mobileItemStyle"
+          :is-collapsed="isCollapsed"
+          :show-child="showChild"
+          :rtl="rtl"
+        >
+          <slot
+            slot="dropdown-icon"
+            name="dropdown-icon"
+          />
+        </sidebar-menu-item>
+        <transition name="slide-animation">
+          <div
+            v-if="mobileItem"
+            class="vsm--mobile-bg"
+            :style="mobileItemStyle.background"
+          />
+        </transition>
+      </div>
+    </template>
     <!-- </div> -->
     <slot name="footer" />
     <button
@@ -143,7 +196,10 @@ export default {
       parentHeight: 0,
       parentWidth: 0,
       parentOffsetTop: 0,
-      parentOffsetLeft: 0
+      parentOffsetLeft: 0,
+      psOptions: {
+        suppressScrollX: true
+      }
     }
   },
   computed: {
