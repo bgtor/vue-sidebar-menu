@@ -10,6 +10,7 @@
       class="vsm--scroll-wrapper"
       :style="isCollapsed && [rtl ? {'margin-left': '-17px'} : {'margin-right': '-17px'}]"
     > -->
+    <perfect-scrollbar>
       <div
         class="vsm--list"
         :style="isCollapsed && {'width': widthCollapsed}"
@@ -61,6 +62,7 @@
           />
         </transition>
       </div>
+      </perfect-scrollbar>
     <!-- </div> -->
     <slot name="footer" />
     <button
@@ -76,11 +78,13 @@
 
 <script>
 import SidebarMenuItem from './SidebarMenuItem.vue'
+import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 
 export default {
   name: 'SidebarMenu',
   components: {
-    SidebarMenuItem
+    SidebarMenuItem,
+     PerfectScrollbar
   },
   props: {
     menu: {
@@ -272,3 +276,4 @@ export default {
 <style lang="scss">
 @import '../scss/vue-sidebar-menu';
 </style>
+<style src="vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css"/>
