@@ -103,6 +103,25 @@ import SidebarMenuLink from "./SidebarMenuLink.vue";
 import SidebarMenuIcon from "./SidebarMenuIcon.vue";
 import SidebarMenuBadge from "./SidebarMenuBadge.vue";
 
+function hexToRgbA(hex, transp) {
+  var c;
+  if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+    c = hex.substring(1).split("");
+    if (c.length == 3) {
+      c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+    }
+    c = "0x" + c.join("");
+    return (
+      "rgba(" +
+      [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(",") +
+      ", " +
+      transp +
+      ")"
+    );
+  }
+  throw new Error("Bad Hex");
+}
+
 export default {
   name: "SidebarMenuItem",
   components: {
@@ -167,6 +186,12 @@ export default {
     cssProps() {
       return {
         "--sb-item-primary-color": this.item.color ? this.item.color : "blue",
+        "--sb-item-primary-color-05": this.item.color
+          ? hexToRgbA(this.item.color, 0.5)
+          : "blue",
+        "--sb-item-primary-color-02": this.item.color
+          ? hexToRgbA(this.item.color, 0.2)
+          : "blue",
       };
     },
     isFirstLevel() {
@@ -389,9 +414,3 @@ export default {
   inject: ["emitActiveShow", "emitItemClick", "emitItemUpdate"],
 };
 </script>
-
-<style scoped>
-:root {
-  --sb-item-primary-color: var(--sb-item-primary-color);
-}
-</style>

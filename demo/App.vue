@@ -115,13 +115,12 @@ export default {
             text: "new",
             class: "vsm--badge_default",
           },
-          color: "green",
         },
         {
           href: "/page",
           title: "Dropdown Page",
           icon: "fa fa-list-ul",
-          color: "red",
+          color: "#ff0000",
           child: [
             {
               href: "/page/sub-page-1",
