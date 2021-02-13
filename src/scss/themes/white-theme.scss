@@ -27,7 +27,7 @@ $dropdown-color-mobile: $item-color;
     &_level-1 {
       &.vsm--link_exact-active,
       &.vsm--link_active {
-        box-shadow: 3px 0px 0px 0px $primary-color inset;
+        box-shadow: 6px 0px 0px 0px $primary-color inset;
         & .vsm--icon {
           color: $icon-active-color;
           background-color: $icon-active-bg;
@@ -110,7 +110,7 @@ $dropdown-color-mobile: $item-color;
   &.vsm_rtl {
     .vsm--link_level-1.vsm--link_active,
     .vsm--link_level-1.vsm--link_exact-active {
-      box-shadow: -3px 0px 0px 0px $primary-color inset;
+      box-shadow: -6px 0px 0px 0px $primary-color inset;
     }
   }
 
