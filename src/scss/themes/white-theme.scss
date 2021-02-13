@@ -4,7 +4,8 @@ $icon-bg: null;
 $icon-active-color: $item-color;
 $icon-active-bg: null;
 $item-hover-bg: rgba(darken($base-bg, 5%), 0.5);
-$dropdown-bg: #e3e3e3;
+$dropdown-bg: var(--sb-item-primary-color-02) !default;
+$dropdown-bg-mobile: var(--sb-item-primary-color-05) !default;
 
 .v-sidebar-menu.vsm_white-theme {
   background-color: $base-bg;
@@ -48,6 +49,17 @@ $dropdown-bg: #e3e3e3;
       .vsm--icon {
         color: $mobile-icon-color;
         background-color: $mobile-icon-bg;
+      }
+    }
+    .vsm--dropdown {
+      & .vsm--list {
+        background-color: $dropdown-bg-mobile;
+      }
+      & .vsm--link {
+        color: $dropdown-color;
+      }
+      & .vsm--icon {
+        color: $dropdown-color;
       }
     }
   }

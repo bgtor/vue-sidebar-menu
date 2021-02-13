@@ -42,6 +42,17 @@
         background-color: $mobile-icon-bg;
       }
     }
+    .vsm--dropdown {
+      & .vsm--list {
+        background-color: $dropdown-bg-mobile;
+      }
+      & .vsm--link {
+        color: $dropdown-color;
+      }
+      & .vsm--icon {
+        color: $dropdown-color;
+      }
+    }
   }
 
   .vsm--icon {
