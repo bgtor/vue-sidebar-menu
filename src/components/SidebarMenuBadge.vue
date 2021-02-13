@@ -2,7 +2,7 @@
   <component
     :is="badge.element ? badge.element : 'span'"
     class="vsm--badge"
-    :class="badge.class"
+    :class="badge.class ? badge.class : 'vsm--badge_default'"
     v-bind="badge.attributes"
   >
     {{ badge.text }}
@@ -11,12 +11,12 @@
 
 <script>
 export default {
-  name: 'SidebarMenuBadge',
+  name: "SidebarMenuBadge",
   props: {
     badge: {
       type: Object,
-      default: () => {}
-    }
-  }
-}
+      default: () => {},
+    },
+  },
+};
 </script>

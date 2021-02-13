@@ -27,6 +27,9 @@
           @unset-mobile-item="unsetMobileItem"
         >
           <slot slot="dropdown-icon" name="dropdown-icon" />
+          <template v-slot:menu-badge="{ item }">
+            <div>{{ item }}</div>
+          </template>
         </sidebar-menu-item>
       </div>
       <div
@@ -44,6 +47,9 @@
           :rtl="rtl"
         >
           <slot slot="dropdown-icon" name="dropdown-icon" />
+          <template v-slot:menu-badge="{ item }">
+            <div>{{ item }}</div>
+          </template>
         </sidebar-menu-item>
         <transition name="slide-animation">
           <div

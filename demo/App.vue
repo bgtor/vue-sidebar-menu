@@ -121,6 +121,9 @@ export default {
           title: "Dropdown Page",
           icon: "fa fa-list-ul",
           color: "#ff0000",
+          badge: {
+            text: "new",
+          },
           child: [
             {
               href: "/page/sub-page-1",
