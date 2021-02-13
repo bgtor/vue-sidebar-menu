@@ -13,16 +13,16 @@ $item-hover-color: null !default;
 $item-hover-bg: rgba(darken($base-bg, 5%), 0.5) !default;
 
 $icon-color: null !default;
-$icon-bg: darken( $base-bg, 5% ) !default;
+$icon-bg: null !default;
 
 $icon-active-color: null !default;
 $icon-active-bg: null !default;
 
-$icon-open-color: null !default;
+$icon-open-color: $item-open-color !default;
 $icon-open-bg: $item-open-bg !default;
 
 $mobile-item-color: #fff !default;
-$mobile-item-bg: $primary-color !default;
+$mobile-item-bg: $base-bg !default;
 $mobile-icon-color: $mobile-item-color !default;
 $mobile-icon-bg: $mobile-item-bg !default;
 

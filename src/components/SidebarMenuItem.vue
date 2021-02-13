@@ -391,4 +391,7 @@ export default {
 </script>
 
 <style scoped>
+:root {
+  --sb-item-primary-color: var(--sb-item-primary-color);
+}
 </style>
