@@ -27,8 +27,9 @@ $mobile-icon-color: $mobile-item-color !default;
 $mobile-icon-bg: $mobile-item-bg !default;
 
 $dropdown-bg: var(--sb-item-primary-color-02) !default;
-$dropdown-bg-mobile: var(--sb-item-primary-color-05) !default;
+$dropdown-bg-mobile: var(--sb-item-dropdown-bg-colapsed-dark) !default;
 $dropdown-color: null !default;
+$dropdown-color-mobile: #fff !default;
 
 $item-font-size: 16px !default;
 $item-line-height: 30px !default;

@@ -4,8 +4,16 @@ $icon-bg: null;
 $icon-active-color: $item-color;
 $icon-active-bg: null;
 $item-hover-bg: rgba(darken($base-bg, 5%), 0.5);
-$dropdown-bg: var(--sb-item-primary-color-02) !default;
-$dropdown-bg-mobile: var(--sb-item-primary-color-05) !default;
+$dropdown-bg: var(--sb-item-primary-color-02);
+$dropdown-bg-mobile: var(--sb-item-primary-color-05);
+
+$mobile-item-color: $item-color;
+$mobile-item-bg: $base-bg ;
+$mobile-icon-color: $mobile-item-color;
+$mobile-icon-bg: $mobile-item-bg;
+
+$dropdown-bg-mobile: var(--sb-item-dropdown-bg-colapsed-light);
+$dropdown-color-mobile: $item-color;
 
 .v-sidebar-menu.vsm_white-theme {
   background-color: $base-bg;
@@ -56,10 +64,10 @@ $dropdown-bg-mobile: var(--sb-item-primary-color-05) !default;
         background-color: $dropdown-bg-mobile;
       }
       & .vsm--link {
-        color: $dropdown-color;
+        color: $dropdown-color-mobile;
       }
       & .vsm--icon {
-        color: $dropdown-color;
+        color: $dropdown-color-mobile;
       }
     }
   }
