@@ -10,7 +10,7 @@ $item-open-color: #fff !default;
 $item-open-bg: var(--sb-item-primary-color-05) !default;
 
 $item-hover-color: null !default;
-$item-hover-bg: rgba(darken($base-bg, 5%), 0.5) !default;
+$item-hover-bg: var(--sb-item-primary-color-02) !default;
 
 $icon-color: null !default;
 $icon-bg: null !default;
