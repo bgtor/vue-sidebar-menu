@@ -41,9 +41,6 @@ export default {
       if (this.item.external) return '_blank'
       return '_self'
     }
-  },
-  mounted () {
-    console.log(this.item)
   }
 }
 </script>
