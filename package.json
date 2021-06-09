@@ -13,9 +13,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yaminncco/vue-sidebar-menu.git"
+    "url": "https://github.com/bgtor/vue-sidebar-menu"
   },
-  "homepage": "https://yaminncco.github.io/vue-sidebar-menu/",
+  "homepage": "https://github.com/bgtor/vue-sidebar-menu",
   "keywords": [
     "vue",
     "vue-component",

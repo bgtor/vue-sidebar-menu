@@ -4,6 +4,7 @@
     v-bind="[isRouterLink ? { to: href } : { href: href }, attributes]"
     :tabindex="item.disabled && -1"
     :target="target"
+    :data-cy="`sidebar-item-${item.title}-${href.replaceAll('/', '-')}`"
   >
     <slot />
   </component>
@@ -21,6 +22,9 @@ export default {
       type: Object,
       default: null
     }
+  },
+  mounted(){
+    console.log(this.item)
   },
   computed: {
     isRouterLink () {
