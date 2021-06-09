@@ -4,7 +4,7 @@
     v-bind="[isRouterLink ? { to: href } : { href: href }, attributes]"
     :tabindex="item.disabled && -1"
     :target="target"
-    :data-cy="`sidebar-item-${item.title}-${href.replaceAll('/', '-')}`"
+    :data-cy="dataCY"
   >
     <slot />
   </component>
@@ -23,10 +23,10 @@ export default {
       default: null
     }
   },
-  mounted(){
-    console.log(this.item)
-  },
   computed: {
+    dataCY () {
+      return 'sidebar-item-' + this.item.title + '-' + (this.item.route || 'no-route')
+    },
     isRouterLink () {
       return !!this.$router && this.item.href && !this.item.external
     },
@@ -41,6 +41,9 @@ export default {
       if (this.item.external) return '_blank'
       return '_self'
     }
+  },
+  mounted () {
+    console.log(this.item)
   }
 }
 </script>
